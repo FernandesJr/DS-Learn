@@ -23,3 +23,8 @@ INSERT INTO tb_notification (text, moment, read, route, user_id) VALUES ('Seja b
 INSERT INTO tb_resource (title, description, position, img_uri, type, offer_id) VALUES ('Trilha HTML e CSS', 'Conteúdo de aprendizado', 1, 'https://ayltoninacio.com.br/img/p/32w750.jpg', 1, 1);
 INSERT INTO tb_resource (title, description, position, img_uri, type, offer_id) VALUES ('Forum', 'Tire todas as suas dúvidas', 2, 'https://ayltoninacio.com.br/img/p/32w750.jpg', 2, 1);
 INSERT INTO tb_resource (title, description, position, img_uri, type, offer_id) VALUES ('Lives', 'Conteúdo exclusivo para a turma', 3, 'https://ayltoninacio.com.br/img/p/32w750.jpg', 0, 1);
+
+
+INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Capitulo 01', 'Começando sua caminhada de aprendizagem', 1, 'https://ayltoninacio.com.br/img/p/32w750.jpg', 1, null);
+INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Capitulo 02', 'Continuando sua caminhada de aprendizagem', 2, 'https://ayltoninacio.com.br/img/p/32w750.jpg', 1, 1);
+INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Capitulo 03', 'Finalizando mais etapa do seu conhecimento', 3, 'https://ayltoninacio.com.br/img/p/32w750.jpg', 1, 2);
