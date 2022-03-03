@@ -1,4 +1,4 @@
-package com.devsuperior.dslearnbds.entities.PK;
+package com.devsuperior.dslearnbds.entities.pk;
 
 import com.devsuperior.dslearnbds.entities.Offer;
 import com.devsuperior.dslearnbds.entities.User;
@@ -10,6 +10,8 @@ import java.io.Serializable;
 
 @Embeddable
 public class EnrollmentPK implements Serializable {
+
+    //Essa classe é uma primary key de enrollment
 
     @ManyToOne
     @JoinColumn(name = "user_id")

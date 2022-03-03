@@ -1,6 +1,6 @@
 package com.devsuperior.dslearnbds.entities;
 
-import com.devsuperior.dslearnbds.entities.PK.EnrollmentPK;
+import com.devsuperior.dslearnbds.entities.pk.EnrollmentPK;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
@@ -16,7 +16,7 @@ public class Enrollment implements Serializable {
     @EmbeddedId
     private EnrollmentPK id = new EnrollmentPK(); //Id composto, entidade com relacionamento entre User e Enrollment, e também entre Enrollment e Offer
 
-    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE") //Armazenar na db sem Time zone, permanece o meridiano de greenwich
+    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE") //Armazenar na db sem Time zone, permanece o meridiano de greenwich, UTC(Coordinated Universal Time)
     private Instant enrollMoment;
 
     @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE") //Armazenar na db sem Time zone, permanece o meridiano de greenwich

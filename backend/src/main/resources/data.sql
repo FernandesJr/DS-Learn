@@ -28,3 +28,6 @@ INSERT INTO tb_resource (title, description, position, img_uri, type, offer_id) 
 INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Capitulo 01', 'Começando sua caminhada de aprendizagem', 1, 'https://ayltoninacio.com.br/img/p/32w750.jpg', 1, null);
 INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Capitulo 02', 'Continuando sua caminhada de aprendizagem', 2, 'https://ayltoninacio.com.br/img/p/32w750.jpg', 1, 1);
 INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Capitulo 03', 'Finalizando mais etapa do seu conhecimento', 3, 'https://ayltoninacio.com.br/img/p/32w750.jpg', 1, 2);
+
+INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_Moment, available, only_Update) VALUES (1, 1, TIMESTAMP WITH TIME ZONE '2022-02-03T15:00:00Z', null, true, false);
+INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_Moment, available, only_Update) VALUES (2, 1, TIMESTAMP WITH TIME ZONE '2022-02-03T15:25:00Z', null, true, false);
