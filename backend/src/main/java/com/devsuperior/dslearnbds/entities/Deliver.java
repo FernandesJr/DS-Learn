@@ -102,4 +102,12 @@ public class Deliver implements Serializable {
     public Enrollment getEnrollment() {
         return enrollment;
     }
+
+    public void setLesson(Lesson lesson) {
+        this.lesson = lesson;
+    }
+
+    public void setEnrollment(Enrollment enrollment) {
+        this.enrollment = enrollment;
+    }
 }

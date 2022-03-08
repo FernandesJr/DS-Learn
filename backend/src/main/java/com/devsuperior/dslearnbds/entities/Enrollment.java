@@ -87,4 +87,12 @@ public class Enrollment implements Serializable {
     public void setOnlyUpdate(boolean onlyUpdate) {
         this.onlyUpdate = onlyUpdate;
     }
+
+    public Set<Lesson> getLessonsDone() {
+        return lessonsDone;
+    }
+
+    public Set<Deliver> getDelivers() {
+        return delivers;
+    }
 }

@@ -36,10 +36,6 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public Set<Role> getRoles() {
-        return roles;
-    }
-
     public Long getId() {
         return id;
     }
@@ -70,5 +66,13 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<Notification> getNotifications() {
+        return notifications;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
     }
 }

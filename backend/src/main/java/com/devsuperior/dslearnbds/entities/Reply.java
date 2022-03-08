@@ -35,7 +35,7 @@ public class Reply implements Serializable {
             joinColumns = @JoinColumn(name = "reply_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id")
     )
-    private Set<User> likes = new HashSet<>();
+    private Set<User> likes = new HashSet<>(); //No DB, a chave ForeignKey na tabela de associação será a PrimaryKey do User e da Reply
 
     public Reply(){}
 
@@ -67,5 +67,25 @@ public class Reply implements Serializable {
 
     public void setMoment(Instant moment) {
         this.moment = moment;
+    }
+
+    public Topic getTopic() {
+        return topic;
+    }
+
+    public void setTopic(Topic topic) {
+        this.topic = topic;
+    }
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
+    }
+
+    public Set<User> getLikes() {
+        return likes;
     }
 }
