@@ -31,6 +31,9 @@ public abstract class Lesson implements Serializable {
     ) //A classe de associação tem a primary key composta, por isso a necessidade dos três campos na tabela
     private Set<Enrollment> enrollmentsDone;
 
+    @OneToMany(mappedBy = "lesson")
+    private Set<Deliver> delivers;
+
     public Lesson(){}
 
     public Lesson(Long id, String title, Integer position, Section section) {

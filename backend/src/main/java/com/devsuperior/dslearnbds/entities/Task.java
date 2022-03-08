@@ -11,7 +11,7 @@ import java.time.Instant;
 public class Task extends Lesson implements Serializable {
 
     private String description;
-    private Integer questionsCount;
+    private Integer questionCount;
     private Integer approvalCount;
     private Double weight;
 
@@ -23,7 +23,7 @@ public class Task extends Lesson implements Serializable {
     public Task(Long id, String title, Integer position, Section section, String description, Integer questionsCount, Integer approvalCount, Double weight, Instant dueDate) {
         super(id, title, position, section); //Herança
         this.description = description;
-        this.questionsCount = questionsCount;
+        this.questionCount = questionsCount;
         this.approvalCount = approvalCount;
         this.weight = weight;
         this.dueDate = dueDate;
@@ -38,11 +38,11 @@ public class Task extends Lesson implements Serializable {
     }
 
     public Integer getQuestionsCount() {
-        return questionsCount;
+        return questionCount;
     }
 
     public void setQuestionsCount(Integer questionsCount) {
-        this.questionsCount = questionsCount;
+        this.questionCount = questionsCount;
     }
 
     public Integer getApprovalCount() {

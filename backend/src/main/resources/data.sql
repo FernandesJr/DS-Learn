@@ -31,3 +31,18 @@ INSERT INTO tb_section (title, description, position, img_uri, resource_id, prer
 
 INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_Moment, available, only_Update) VALUES (1, 1, TIMESTAMP WITH TIME ZONE '2022-02-03T15:00:00Z', null, true, false);
 INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_Moment, available, only_Update) VALUES (2, 1, TIMESTAMP WITH TIME ZONE '2022-02-03T15:25:00Z', null, true, false);
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Aula 01', 1, 1);
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Aula 02', 2, 1);
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Aula 03', 3, 1);
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Aula 04', 4, 1);
+
+INSERT INTO tb_content (id, text_content, video_uri) VALUES (1, 'Aula introdutória', 'https://www.youtube.com/watch?v=eOek_XEj2Hk');
+INSERT INTO tb_content (id, text_content, video_uri) VALUES (2, '', 'https://www.youtube.com/watch?v=eOek_XEj2Hk');
+INSERT INTO tb_content (id, text_content, video_uri) VALUES (3, '', 'https://www.youtube.com/watch?v=eOek_XEj2Hk');
+
+INSERT INTO tb_task (id, description, question_count, approval_count, weight, due_date) VALUES (4, 'Tenha um bom trabalho', 5, 4, 1.0, TIMESTAMP WITH TIME ZONE '2022-02-13T15:00:00Z');
+
+INSERT INTO tb_lesson_done (user_id, offer_id, lesson_id) VALUES (1, 1, 1);
+INSERT INTO tb_lesson_done (user_id, offer_id, lesson_id) VALUES (1, 1, 2);
+
