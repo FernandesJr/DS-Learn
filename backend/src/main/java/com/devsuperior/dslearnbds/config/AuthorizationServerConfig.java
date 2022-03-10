@@ -1,6 +1,7 @@
 package com.devsuperior.dslearnbds.config;
 
 import com.devsuperior.dslearnbds.components.JwtTokenEnhancer;
+import com.devsuperior.dslearnbds.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
@@ -45,6 +46,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Autowired
     private JwtTokenEnhancer tokenEnhancer;
 
+    @Autowired
+    private UserService userService;
+
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         security.tokenKeyAccess("permitAll()").checkTokenAccess("isAuthenticated()");
@@ -56,8 +60,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .withClient(clientId) //User da aplicação
                 .secret(passwordEncoder.encode(clientSecret))// Senha da aplicação
                 .scopes("read", "write")//permissões do token
-                .authorizedGrantTypes("password") //default JWT
-                .accessTokenValiditySeconds(jwtDuration); //Tempo de expiração do token (em segundos)
+                .authorizedGrantTypes("password", "refresh_token") //default JWT e o refresh_token
+                .accessTokenValiditySeconds(jwtDuration) //Tempo de expiração do token (em segundos)
+                .refreshTokenValiditySeconds(jwtDuration); //Tempo de expiração do refresh_token (em segundos)
     }
 
     @Override
@@ -70,6 +75,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         endpoints.authenticationManager(authenticationManager)
                 .tokenStore(tokenStore)
                 .accessTokenConverter(accessTokenConverter)
-                .tokenEnhancer(chain);
+                .tokenEnhancer(chain)
+                .userDetailsService(userService);
     }
 }
