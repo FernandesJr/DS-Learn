@@ -18,10 +18,10 @@ public class NotiifcationService {
     @Autowired
     private AuthService authService;
 
-    public Page<NotificationDTO> findNotificationByAuthenticatedUser(Pageable pageable){
+    public Page<NotificationDTO> findNotificationByAuthenticatedUser(Pageable pageable, boolean unreadOnly){
 
         User user = authService.userAuthenticated(); //User autenticado no SpringSecurity
-        Page<Notification> page = repository.findByUser(user, pageable);
+        Page<Notification> page = repository.find(unreadOnly, user , pageable);
         return page.map(n -> new NotificationDTO(n));
     }
 }
